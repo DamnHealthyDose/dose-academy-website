@@ -1,0 +1,2 @@
+-- Initial migration baseline for dose-academy-website
+-- Schema is currently empty; all tables will be added in subsequent migrations.
