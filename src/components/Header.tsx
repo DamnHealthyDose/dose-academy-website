@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 import logoImage from "@/assets/dose-academy-logo.png";
 
 const navLinks = [
@@ -38,6 +39,7 @@ const Header = () => {
           
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
             <Button variant="ghost" className="text-foreground">
               Sign In
             </Button>
@@ -48,6 +50,7 @@ const Header = () => {
 
           {/* Mobile hamburger */}
           <div className="flex md:hidden items-center gap-2">
+            <ThemeToggle />
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" aria-label="Open menu">
