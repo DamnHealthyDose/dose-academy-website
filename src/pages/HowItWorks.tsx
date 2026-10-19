@@ -240,7 +240,7 @@ const HowItWorks = () => {
       <section className="w-full bg-background py-10 px-5">
         <div className="scroll-reveal opacity-0 transition-all duration-500 max-w-[600px] mx-auto bg-accent/50 border border-border rounded-2xl p-7 flex flex-col sm:flex-row items-center gap-5">
           <div className="w-[72px] h-[72px] rounded-full bg-primary flex items-center justify-center shrink-0 overflow-hidden">
-            <img src={slickImage} alt="Slick" className="w-full h-full object-cover" />
+            <img src={slickImage} alt="Slick" className="w-full h-full object-contain p-1" />
           </div>
           <div className="text-center sm:text-left">
             <p className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1">Slick says:</p>

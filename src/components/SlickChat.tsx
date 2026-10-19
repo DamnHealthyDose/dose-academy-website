@@ -146,7 +146,7 @@ const SlickChat = ({ isOpen: controlledOpen, onOpenChange }: SlickChatProps) => 
         >
           <div className="relative">
             <div className="h-16 w-16 rounded-full bg-primary shadow-lg flex items-center justify-center transition-transform group-hover:scale-110 active:scale-95 overflow-hidden border-2 border-primary-foreground/20">
-              <img src={mascotImage} alt="Slick" className="h-14 w-14 object-cover" />
+              <img src={mascotImage} alt="Slick" className="h-14 w-14 object-contain" />
             </div>
             <div className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-secondary animate-pulse border-2 border-background" />
           </div>
@@ -162,7 +162,7 @@ const SlickChat = ({ isOpen: controlledOpen, onOpenChange }: SlickChatProps) => 
           {/* Header */}
           <div className="flex items-center gap-3 px-4 py-3 bg-primary text-primary-foreground">
             <Avatar className="h-9 w-9 border-2 border-primary-foreground/30">
-              <AvatarImage src={mascotImage} alt="Slick" />
+              <AvatarImage src={mascotImage} alt="Slick" className="object-contain" />
               <AvatarFallback>S</AvatarFallback>
             </Avatar>
             <div className="flex-1 min-w-0">
@@ -188,7 +188,7 @@ const SlickChat = ({ isOpen: controlledOpen, onOpenChange }: SlickChatProps) => 
               >
                 {msg.role === "assistant" && (
                   <Avatar className="h-7 w-7 flex-shrink-0 mt-1">
-                    <AvatarImage src={mascotImage} alt="Slick" />
+                    <AvatarImage src={mascotImage} alt="Slick" className="object-contain" />
                     <AvatarFallback>S</AvatarFallback>
                   </Avatar>
                 )}
@@ -212,7 +212,7 @@ const SlickChat = ({ isOpen: controlledOpen, onOpenChange }: SlickChatProps) => 
             {isLoading && messages[messages.length - 1]?.role !== "assistant" && (
               <div className="flex gap-2 justify-start">
                 <Avatar className="h-7 w-7 flex-shrink-0 mt-1">
-                  <AvatarImage src={mascotImage} alt="Slick" />
+                  <AvatarImage src={mascotImage} alt="Slick" className="object-contain" />
                   <AvatarFallback>S</AvatarFallback>
                 </Avatar>
                 <div className="bg-muted rounded-2xl rounded-bl-md px-4 py-3">
