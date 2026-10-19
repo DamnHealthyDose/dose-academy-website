@@ -7,6 +7,22 @@
     <title>DOSE Academy | Learn ADHD Skills | RSD Management & Emotional Regulation for Ages 10-17</title>
     <meta name="description" content="The first ADHD management platform designed for teens ages 10-17. Get homework help, emotional regulation tools, and peer support in one place." />
     <meta name="author" content="DOSE Academy" />
+    <meta name="theme-color" content="#f8fafc" />
+    <script>
+      // Apply the saved/OS theme before first paint. Keep in sync with ThemeProvider (storageKey "dose-theme").
+      // Missing value or "system" => follow prefers-color-scheme; only "dark"/"light" are explicit choices.
+      (function () {
+        try {
+          var saved = localStorage.getItem("dose-theme");
+          var dark = saved === "dark" || (saved !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          var root = document.documentElement;
+          root.classList.toggle("dark", dark);
+          root.style.colorScheme = dark ? "dark" : "light";
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", dark ? "#0d1719" : "#f8fafc");
+        } catch (e) {}
+      })();
+    </script>
 
     <meta property="og:title" content="DOSE Academy - Master Your ADHD, Own Your Success" />
     <meta property="og:description" content="Empowering teens with ADHD through SPARK Junior, WAVE Junior, RSD tools, and safe peer support. School integration included." />

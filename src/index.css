@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Use design tokens only; every color must work in .dark. */
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
+    color-scheme: light;
+
     --background: 210 40% 98%;
     --foreground: 220 26% 14%;
 
@@ -67,37 +71,53 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 26% 14%;
-    --foreground: 210 40% 98%;
+    color-scheme: dark;
 
-    --card: 220 20% 18%;
-    --card-foreground: 210 40% 98%;
+    /* ~#0d1719 */
+    --background: 190 31% 7%;
+    --foreground: 180 20% 96%;
 
-    --popover: 220 20% 18%;
-    --popover-foreground: 210 40% 98%;
+    /* ~#132427 */
+    --card: 189 35% 11%;
+    --card-foreground: 180 20% 96%;
 
-    --primary: 186 94% 42%;
-    --primary-foreground: 0 0% 100%;
+    --popover: 189 35% 11%;
+    --popover-foreground: 180 20% 96%;
+
+    /* Brightened cyan with dark text, like the main site's primary button */
+    --primary: 186 94% 50%;
+    --primary-foreground: 190 40% 7%;
 
     --secondary: 24 95% 64%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 190 40% 7%;
 
-    --muted: 220 20% 22%;
-    --muted-foreground: 220 14% 66%;
+    --muted: 189 30% 15%;
+    --muted-foreground: 190 14% 70%;
 
-    --accent: 220 20% 22%;
-    --accent-foreground: 186 94% 42%;
+    --accent: 189 40% 16%;
+    --accent-foreground: 186 90% 60%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 22%;
-    --input: 220 20% 22%;
-    --ring: 186 94% 42%;
-    
-    --gradient-hero: linear-gradient(135deg, hsl(186 94% 42%) 0%, hsl(186 80% 50%) 100%);
+    --border: 189 22% 20%;
+    --input: 189 22% 20%;
+    --ring: 186 94% 55%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 190 40% 7%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(186 94% 50%) 0%, hsl(186 85% 62%) 100%);
     --gradient-warm: linear-gradient(135deg, hsl(24 95% 64%) 0%, hsl(24 95% 70%) 100%);
-    --gradient-soft: linear-gradient(180deg, hsl(220 26% 14%) 0%, hsl(220 22% 16%) 100%);
+    /* Subtle teal glow behind the hero, like the main site */
+    --gradient-soft:
+      radial-gradient(ellipse 70% 60% at 50% 0%, hsl(186 80% 30% / 0.28) 0%, transparent 70%),
+      linear-gradient(180deg, hsl(190 31% 7%) 0%, hsl(190 31% 8%) 100%);
+
+    --shadow-soft: 0 2px 8px hsla(0 0% 0% / 0.35);
+    --shadow-medium: 0 4px 16px hsla(0 0% 0% / 0.4);
+    --shadow-large: 0 8px 32px hsla(0 0% 0% / 0.45);
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -116,5 +136,27 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Short theme-change fade, scoped to page chrome so hovers and existing animations are untouched.
+     Lives in @layer base so utilities like transition-colors still win where used. */
+  body,
+  header,
+  footer,
+  section,
+  [class*="bg-card"] {
+    transition-property: background-color, color, border-color;
+    transition-duration: 200ms;
+    transition-timing-function: ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    body,
+    header,
+    footer,
+    section,
+    [class*="bg-card"] {
+      transition: none;
+    }
   }
 }
