@@ -70,27 +70,32 @@ const Hero = () => {
             </div>
             
             {/* Mascot - clickable to open chat */}
-            <div className="flex-shrink-0 animate-fade-in text-center">
-              <button onClick={openChat} className="focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-full">
-                <img 
-                  src={mascotImage} 
-                  alt="DOSE Academy Mascot - Slick — Click to chat!" 
-                  className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 animate-bounce-gentle drop-shadow-2xl cursor-pointer transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] hover:animate-none active:scale-95"
+            <div className="relative z-10 flex-shrink-0 animate-fade-in">
+              <button
+                type="button"
+                onClick={openChat}
+                aria-label="Chat with Slick, your AI companion"
+                className="group block cursor-pointer text-center rounded-3xl p-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:translate-y-0"
+              >
+                <img
+                  src={mascotImage}
+                  alt=""
+                  className="mx-auto w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 animate-bounce-gentle drop-shadow-2xl transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] group-hover:animate-none group-active:scale-95"
                 />
+                <span className="mt-4 block text-2xl font-bold text-foreground">Meet Slick</span>
+                <span className="mt-2 block text-sm text-muted-foreground max-w-xs mx-auto">
+                  Your AI companion ready to guide you through every step of the app.
+                  <span className="ml-1 text-primary font-medium group-hover:underline">Chat now →</span>
+                </span>
               </button>
-              <h3 className="mt-4 text-2xl font-bold text-foreground">Meet Slick</h3>
-              <p className="mt-2 text-sm text-muted-foreground max-w-xs mx-auto">
-                Your AI companion ready to guide you through every step of the app.
-                <button onClick={openChat} className="ml-1 text-primary font-medium hover:underline">Chat now →</button>
-              </p>
             </div>
           </div>
         </div>
       </div>
       
       {/* Decorative gradient orbs */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "3s" }}></div>
+      <div className="pointer-events-none absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+      <div className="pointer-events-none absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "3s" }}></div>
     </section>
   );
 };
