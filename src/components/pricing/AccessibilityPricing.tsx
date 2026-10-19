@@ -1,5 +1,6 @@
 import { Heart, DollarSign, HandHeart, Users } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const AccessibilityPricing = () => {
   const incomeTiers = [
@@ -8,7 +9,10 @@ const AccessibilityPricing = () => {
       discount: "FREE",
       price: "$0/month",
       features: "Basic features included",
-      bgColor: "bg-gradient-warm"
+      bgColor: "bg-gradient-warm",
+      // Saturated orange surface: use the dark on-secondary text in dark mode
+      fgClass: "dark:text-secondary-foreground",
+      mutedClass: "dark:text-secondary-foreground/80"
     },
     {
       range: "$30k - $60k",
@@ -50,17 +54,17 @@ const AccessibilityPricing = () => {
           {incomeTiers.map((tier, index) => (
             <Card key={index} className={cn("p-6 border-2", tier.bgColor)}>
               <div className="text-center">
-                <p className="text-sm font-semibold text-muted-foreground mb-2">
+                <p className={cn("text-sm font-semibold text-muted-foreground mb-2", tier.mutedClass)}>
                   Household Income
                 </p>
-                <h3 className="text-xl font-bold mb-3 text-foreground">{tier.range}</h3>
+                <h3 className={cn("text-xl font-bold mb-3 text-foreground", tier.fgClass)}>{tier.range}</h3>
                 <div className="mb-3">
                   <span className="inline-block px-3 py-1 bg-background rounded-full text-sm font-semibold text-primary">
                     {tier.discount}
                   </span>
                 </div>
-                <p className="text-2xl font-bold text-foreground mb-2">{tier.price}</p>
-                <p className="text-sm text-muted-foreground">{tier.features}</p>
+                <p className={cn("text-2xl font-bold text-foreground mb-2", tier.fgClass)}>{tier.price}</p>
+                <p className={cn("text-sm text-muted-foreground", tier.mutedClass)}>{tier.features}</p>
               </div>
             </Card>
           ))}
@@ -104,10 +108,6 @@ const AccessibilityPricing = () => {
       </div>
     </section>
   );
-};
-
-const cn = (...classes: string[]) => {
-  return classes.filter(Boolean).join(" ");
 };
 
 export default AccessibilityPricing;

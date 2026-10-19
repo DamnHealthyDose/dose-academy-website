@@ -81,7 +81,7 @@ const Hero = () => {
                 <img
                   src={mascotImage}
                   alt=""
-                  className="mx-auto w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 animate-bounce-gentle drop-shadow-2xl transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] group-hover:animate-none group-active:scale-95"
+                  className="mx-auto w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 animate-bounce-gentle drop-shadow-2xl dark:rounded-3xl dark:ring-1 dark:ring-border transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] group-hover:animate-none group-active:scale-95"
                 />
                 <span className="mt-4 block text-2xl font-bold text-foreground">Meet Slick</span>
                 <span className="mt-2 block text-sm text-muted-foreground max-w-xs mx-auto">

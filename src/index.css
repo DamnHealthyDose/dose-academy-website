@@ -101,7 +101,7 @@ All colors MUST be HSL.
     --destructive-foreground: 0 0% 100%;
 
     --border: 189 22% 20%;
-    --input: 189 22% 20%;
+    --input: 189 18% 40%; /* >=3:1 on bg and card: form control boundary */
     --ring: 186 94% 55%;
 
     --success: 142 71% 45%;
