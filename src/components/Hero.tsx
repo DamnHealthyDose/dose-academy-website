@@ -43,7 +43,7 @@ const Hero = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center animate-fade-in">
-                <Button size="lg" className="bg-gradient-to-br from-cyan-700 to-cyan-800 hover:from-cyan-800 hover:to-cyan-900 text-white shadow-medium group" asChild>
+                <Button size="lg" variant="brand" className="shadow-medium group" asChild>
                   <a href="https://app-doseacademy.vercel.app/" target="_blank" rel="noopener noreferrer">
                     Get Started Free
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

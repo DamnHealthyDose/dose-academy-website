@@ -10,10 +10,9 @@ const ThemeColorMeta = () => {
   const { resolvedTheme } = useTheme();
 
   useEffect(() => {
-    const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta && resolvedTheme) {
-      meta.setAttribute("content", resolvedTheme === "dark" ? THEME_COLORS.dark : THEME_COLORS.light);
-    }
+    if (!resolvedTheme) return;
+    const color = resolvedTheme === "dark" ? THEME_COLORS.dark : THEME_COLORS.light;
+    document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => meta.setAttribute("content", color));
   }, [resolvedTheme]);
 
   return null;

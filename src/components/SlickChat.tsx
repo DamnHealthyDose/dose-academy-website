@@ -200,7 +200,7 @@ const SlickChat = ({ isOpen: controlledOpen, onOpenChange }: SlickChatProps) => 
                   }`}
                 >
                   {msg.role === "assistant" ? (
-                    <div className="prose prose-sm max-w-none [&_p]:m-0 [&_ul]:m-0 [&_ol]:m-0">
+                    <div className="prose prose-sm dark:prose-invert max-w-none [&_p]:m-0 [&_ul]:m-0 [&_ol]:m-0">
                       <ReactMarkdown>{msg.content}</ReactMarkdown>
                     </div>
                   ) : (

@@ -10,6 +10,8 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        // Academy CTA: deep cyan gradient + white text in light; bright cyan fill + dark text in dark.
+        brand: "bg-gradient-to-br from-cyan-700 to-cyan-800 text-white hover:from-cyan-800 hover:to-cyan-900 dark:from-primary dark:to-primary dark:text-primary-foreground dark:hover:from-primary/90 dark:hover:to-primary/90",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
