@@ -41,7 +41,7 @@ const Header = () => {
             <Button variant="ghost" className="text-foreground">
               Sign In
             </Button>
-            <Button className="bg-gradient-hero text-primary-foreground hover:opacity-90" asChild>
+            <Button className="bg-gradient-to-br from-cyan-700 to-cyan-800 hover:from-cyan-800 hover:to-cyan-900 text-white" asChild>
               <a href="https://app-doseacademy.vercel.app/" target="_blank" rel="noopener noreferrer">Get Started</a>
             </Button>
           </div>
@@ -77,7 +77,7 @@ const Header = () => {
                     <Button variant="ghost" className="text-foreground justify-start">
                       Sign In
                     </Button>
-                    <Button className="bg-gradient-hero text-primary-foreground hover:opacity-90" asChild>
+                    <Button className="bg-gradient-to-br from-cyan-700 to-cyan-800 hover:from-cyan-800 hover:to-cyan-900 text-white" asChild>
                       <a href="https://app-doseacademy.vercel.app/" target="_blank" rel="noopener noreferrer">Get Started</a>
                     </Button>
                   </div>
