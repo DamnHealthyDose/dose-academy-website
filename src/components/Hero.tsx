@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import logoImage from "@/assets/dose-academy-logo.png";
 import mascotImage from "@/assets/dose-mascot-custom.png";
 import { SlickChatContext } from "@/App";
@@ -48,8 +49,8 @@ const Hero = () => {
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </a>
                 </Button>
-                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-accent">
-                  See How It Works
+                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-accent" asChild>
+                  <Link to="/how-it-works">See How It Works</Link>
                 </Button>
               </div>
               
