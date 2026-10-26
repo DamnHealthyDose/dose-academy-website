@@ -3,6 +3,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import logoImage from "@/assets/dose-academy-logo.png";
+import { APP_URL } from "@/lib/constants";
 import mascotImage from "@/assets/dose-mascot-custom.png";
 import { SlickChatContext } from "@/App";
 
@@ -44,7 +45,7 @@ const Hero = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center animate-fade-in">
                 <Button size="lg" variant="brand" className="shadow-medium group" asChild>
-                  <a href="https://app-doseacademy.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  <a href={APP_URL} target="_blank" rel="noopener noreferrer">
                     Get Started Free
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </a>

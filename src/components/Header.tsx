@@ -4,6 +4,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/s
 import { Menu } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import logoImage from "@/assets/dose-academy-logo.png";
+import { APP_URL } from "@/lib/constants";
 
 const navLinks = [
   { href: "/#features", label: "Features" },
@@ -40,11 +41,11 @@ const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <ThemeToggle />
-            <Button variant="ghost" className="text-foreground">
-              Sign In
+            <Button variant="ghost" className="text-foreground" asChild>
+              <a href={APP_URL} target="_blank" rel="noopener noreferrer">Sign In</a>
             </Button>
             <Button variant="brand" asChild>
-              <a href="https://app-doseacademy.vercel.app/" target="_blank" rel="noopener noreferrer">Get Started</a>
+              <a href={APP_URL} target="_blank" rel="noopener noreferrer">Get Started</a>
             </Button>
           </div>
 
@@ -77,11 +78,11 @@ const Header = () => {
                     ))}
                   </nav>
                   <div className="flex flex-col gap-3 mt-4">
-                    <Button variant="ghost" className="text-foreground justify-start">
-                      Sign In
+                    <Button variant="ghost" className="text-foreground justify-start" asChild>
+                      <a href={APP_URL} target="_blank" rel="noopener noreferrer">Sign In</a>
                     </Button>
                     <Button variant="brand" asChild>
-                      <a href="https://app-doseacademy.vercel.app/" target="_blank" rel="noopener noreferrer">Get Started</a>
+                      <a href={APP_URL} target="_blank" rel="noopener noreferrer">Get Started</a>
                     </Button>
                   </div>
                 </div>

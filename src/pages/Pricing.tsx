@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { APP_URL } from "@/lib/constants";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PricingHero from "@/components/pricing/PricingHero";
@@ -101,7 +102,7 @@ const Pricing = () => {
             <h2 className="text-4xl font-bold mb-4">Ready to Transform Your Teen's ADHD Journey?</h2>
             <p className="text-xl mb-8">Family plans starting at $14.99/month</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://app-doseacademy.vercel.app/" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-background text-cyan-800 dark:bg-primary dark:text-primary-foreground rounded-lg font-semibold hover:bg-background/90 dark:hover:bg-primary/90 transition-colors">
+              <a href={APP_URL} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-background text-cyan-800 dark:bg-primary dark:text-primary-foreground rounded-lg font-semibold hover:bg-background/90 dark:hover:bg-primary/90 transition-colors">
                 Start Free Trial
               </a>
               <Link to="/contact" className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold text-center hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-cyan-500">

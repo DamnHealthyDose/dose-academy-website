@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { APP_URL } from "@/lib/constants";
 
 const CTA = () => {
   return (
@@ -21,7 +22,7 @@ const CTA = () => {
               className="bg-background text-cyan-800 hover:bg-background/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90 shadow-large group"
               asChild
             >
-              <a href="https://app-doseacademy.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <a href={APP_URL} target="_blank" rel="noopener noreferrer">
                 Start Free Today
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import slickImage from "@/assets/dose-mascot-custom.png";
+import { APP_URL } from "@/lib/constants";
 
 const useScrollReveal = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -265,7 +266,7 @@ const HowItWorks = () => {
             className="bg-primary text-primary-foreground font-bold rounded-full px-6 py-3 hover:bg-primary/90"
             asChild
           >
-            <a href="https://app-doseacademy.vercel.app/" target="_blank" rel="noopener noreferrer">
+            <a href={APP_URL} target="_blank" rel="noopener noreferrer">
               Get Started Free
             </a>
           </Button>
