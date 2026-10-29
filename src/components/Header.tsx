@@ -42,7 +42,7 @@ const Header = () => {
           <div className="hidden md:flex items-center gap-3">
             <ThemeToggle />
             <Button variant="ghost" className="text-foreground" asChild>
-              <a href={APP_URL} target="_blank" rel="noopener noreferrer">Sign In</a>
+              <a href={`${APP_URL}/auth`} target="_blank" rel="noopener noreferrer">Sign In</a>
             </Button>
             <Button variant="brand" asChild>
               <a href={APP_URL} target="_blank" rel="noopener noreferrer">Get Started</a>
@@ -79,7 +79,7 @@ const Header = () => {
                   </nav>
                   <div className="flex flex-col gap-3 mt-4">
                     <Button variant="ghost" className="text-foreground justify-start" asChild>
-                      <a href={APP_URL} target="_blank" rel="noopener noreferrer">Sign In</a>
+                      <a href={`${APP_URL}/auth`} target="_blank" rel="noopener noreferrer">Sign In</a>
                     </Button>
                     <Button variant="brand" asChild>
                       <a href={APP_URL} target="_blank" rel="noopener noreferrer">Get Started</a>
